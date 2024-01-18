@@ -37,6 +37,7 @@ app.post ("/", async (req, res)=>{
         const result = response.data;
         res.render("index.ejs", {
             lyrics: result,
+            
           });
         
      } catch (error) {
@@ -50,3 +51,5 @@ app.post ("/", async (req, res)=>{
   app.listen(port, () => {
     console.log(`Server running on port: ${port}`);
   });
+
+  
