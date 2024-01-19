@@ -1,5 +1,6 @@
 .form-control { 
     width:45% !important; 
+    margin-bottom: 10px !important;
 }
 *{
     font-family: 'Quicksand', sans-serif;
@@ -9,7 +10,8 @@
     margin-right:5px 
 }
 .btn { 
-    margin-left:-35px !important; 
+    margin-left:35px !important; 
+   
 }
 
 .navbar {
@@ -62,22 +64,7 @@
         color: #555;
     }
 }
-.gradient-background {
-    background: linear-gradient(90deg,rgba(209, 159, 208) 0%,rgba(191,70,255,1)49%, rgba(0,212,255,1) 100%);
-    background-size: 180% 180%;
-    animation: gradient-animation 18s ease infinite;  
-    height: 100%;}
-    @keyframes gradient-animation {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
-    }
+
 
     @import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
 html,
@@ -420,4 +407,115 @@ body {
 .affix {
     padding: 0;
     background-color: #111;
+}
+
+.button {
+    
+    position:relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 3rem;
+    border-radius: 2rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .button-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      #00E676 10.8%,
+      #00e677c7 94.3%
+    );
+    transition: all 0.475s;
+  }
+  .form-control:focus {
+    border-color: #00e677c4 !important;
+    box-shadow: 0 0 5px #ffffff !important;
+  }
+  
+  pre {
+    font-size: 25px;
+    font-weight: bold;
+    font-family:'Quicksand', sans-serif !important ;
+    background-color: #5e5d5d;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: auto;
+  }
+  .card {
+  width: 100%!important;
+  height: 50px !important;
+  background: rgb(103, 225, 255);
+  transition: all 0.4s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px 5px  rgba(74, 190, 146, 0.705);
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.card:hover {
+  border-radius: 15px;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 0px 0px 10px 5px  rgba(0, 0, 0, 0.705);
+  background: rgba(22, 180, 119, 0.705);
+}
+
+.first-content {
+  height: 100%;
+  width: 100%;
+  transition: all 0.4s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  border-radius: 15px;
+}
+
+.card:hover .first-content {
+  height: 0px;
+  opacity: 0;
+}
+
+.second-content {
+  height: 0%;
+  width: 100%;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  transition: all 0.4s;
+  font-size: 0px;
+  transform: rotate(90deg) scale(-1);
+}
+
+.card:hover .second-content {
+  opacity: 1;
+  height: 100%;
+  font-size: 1.8rem;
+  transform: rotate(0deg);
 }

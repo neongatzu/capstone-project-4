@@ -26,6 +26,7 @@ app.get("/", (req, res) => {
 app.post ("/", async (req, res)=>{
      try {
         console.log("Request Body:", req.body);
+
         const artist = encodeURIComponent(req.body.artist);
         const title = encodeURIComponent(req.body.title);
 
@@ -35,10 +36,14 @@ app.post ("/", async (req, res)=>{
         const response = await axios.get(apiUrl);
         
         const result = response.data;
+        console.log("Result from API:", result);
+            
         res.render("index.ejs", {
             lyrics: result,
-            
-          });
+            title: title,
+            artist: artist,
+
+        });
         
      } catch (error) {
         console.error("Failed to make request:", error.message);
